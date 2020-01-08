@@ -17,7 +17,6 @@ class timer implements Runnable {
         hours = h;
         this.thread.start();
     }
-
     public void run() {
         label41:
         while(true) {
@@ -38,7 +37,6 @@ class timer implements Runnable {
                         minutes = 0;
                         ++hours;
                     }
-
                     ++millisecounds;
                     swing.jl1.setText(hours + ": " + minutes + ": " + secounds);
                 } catch (Exception var3) {
@@ -57,7 +55,6 @@ class timer implements Runnable {
                     }
                 }
             }
-
             millisecounds = 0;
             secounds = 0;
             minutes = 0;

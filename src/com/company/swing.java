@@ -117,7 +117,6 @@ class swing implements ActionListener {
         tf_p.add(tf_b_2,g);
         jfrm.add(tf_p);
 
-
         GridBagConstraints c2 = new GridBagConstraints();
 
         c2.weighty = 0;
@@ -348,7 +347,14 @@ class swing implements ActionListener {
                 }
                 jPanel.removeAll();
                 y_grid=3;
-                v.clear();
+                for(int i=0;i<v.size();i++) {
+                    if(v.get(i).thrd.isAlive()){
+                        break;
+                    }
+                    else{
+                        v.clear();
+                    }
+                }
             }
         }
     }
@@ -409,7 +415,7 @@ class swing implements ActionListener {
         for(int i=0;i<s_count;i++){
             v.add(i, new thread("shop " + (i+1), 5,y_set(i)));
         }
-        timer t = new timer("t",00,00,00,000);
+        new timer("t",00,00,00,000);
     }
     public void vivod(){ // чтение из файла // сохранение //
         Font f = new Font("Arial",Font.BOLD,22);
